@@ -21,7 +21,7 @@ const GlobalStyle = createGlobalStyle`
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/myapps">
       <GlobalStyle />
       <TopPage />
     </BrowserRouter>

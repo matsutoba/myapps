@@ -31,8 +31,8 @@ export const TopPage: React.FC = () => {
         <SideMenu />
         <Content>
           <Routes>
-            <Route path="/myapps/profile" element={<Profile />} />
-            <Route path="/myapps/csssite" element={<CssSite />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/csssite" element={<CssSite />} />
           </Routes>
         </Content>
       </Body>
