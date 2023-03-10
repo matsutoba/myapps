@@ -4,6 +4,7 @@ import { Header } from './Header'
 import { SideMenu } from './SideMenu'
 import styled from 'styled-components'
 import { Profile } from '../Profile'
+import { CssSite } from '../CssSite'
 
 const Wrapper = styled.div`
   position: relative;
@@ -19,6 +20,7 @@ const Content = styled.div`
   width: calc(100% - 192px);
   padding: 8px;
   box-sizing: border-box;
+  overflow: auto;
 `
 
 export const TopPage: React.FC = () => {
@@ -30,6 +32,7 @@ export const TopPage: React.FC = () => {
         <Content>
           <Routes>
             <Route path="/profile" element={<Profile />} />
+            <Route path="/csssite" element={<CssSite />} />
           </Routes>
         </Content>
       </Body>

@@ -6,8 +6,16 @@ import { BrowserRouter } from 'react-router-dom'
 
 const GlobalStyle = createGlobalStyle`
   ${reset};
+  html {
+    font-size: 62.5%;
+  }
   html, body, #root {
     height: 100%;
+    font-size: 1.0rem;
+  }
+  h1 {
+    font-size: 1.8rem;
+    padding: 0 0 16px 0;
   }
 `
 

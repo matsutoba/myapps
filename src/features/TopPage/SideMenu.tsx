@@ -23,7 +23,12 @@ export const SideMenu: React.FC = () => {
               handleClick('/profile')
             },
           },
-          { name: 'Skill', onClick: () => {} },
+          {
+            name: 'CSS',
+            onClick: () => {
+              handleClick('/csssite')
+            },
+          },
         ]}
       />
     </Wrapper>
