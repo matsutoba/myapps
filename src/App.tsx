@@ -18,10 +18,11 @@ const GlobalStyle = createGlobalStyle`
     padding: 0 0 16px 0;
   }
 `
+const ROUTER_BASENAME = process.env.PUBLIC_URL
 
 function App() {
   return (
-    <BrowserRouter basename="/myapps">
+    <BrowserRouter basename={ROUTER_BASENAME}>
       <GlobalStyle />
       <TopPage />
     </BrowserRouter>
