@@ -1,27 +1,22 @@
 import React from 'react'
 import { createGlobalStyle } from 'styled-components'
 import reset from 'styled-reset'
+import { TopPage } from './features/TopPage'
+import { BrowserRouter } from 'react-router-dom'
 
 const GlobalStyle = createGlobalStyle`
-  ${reset}
+  ${reset};
+  html, body, #root {
+    height: 100%;
+  }
 `
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <GlobalStyle />
-      <div>
-        <header>
-          <a
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    </>
+      <TopPage />
+    </BrowserRouter>
   )
 }
 
