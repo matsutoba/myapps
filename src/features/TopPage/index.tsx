@@ -5,6 +5,8 @@ import { SideMenu } from './SideMenu'
 import styled from 'styled-components'
 import { Profile } from '../Profile'
 import { CssSite } from '../CssSite'
+import { Forms } from '../Forms'
+import { Drawing } from '../Drawing'
 
 const Wrapper = styled.div`
   position: relative;
@@ -33,6 +35,8 @@ export const TopPage: React.FC = () => {
           <Routes>
             <Route path="/profile" element={<Profile />} />
             <Route path="/csssite" element={<CssSite />} />
+            <Route path="/forms" element={<Forms />} />
+            <Route path="/drawing" element={<Drawing />} />
           </Routes>
         </Content>
       </Body>

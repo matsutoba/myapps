@@ -15,7 +15,7 @@ export const SideMenu: React.FC = () => {
   return (
     <Wrapper>
       <Accordion
-        title="Menu"
+        title="About"
         items={[
           {
             name: 'Profile',
@@ -23,10 +23,27 @@ export const SideMenu: React.FC = () => {
               handleClick('/myapps/profile')
             },
           },
+        ]}
+      />
+      <Accordion
+        title="ポートフォリオ"
+        items={[
           {
             name: 'CSS',
             onClick: () => {
               handleClick('/myapps/csssite')
+            },
+          },
+          {
+            name: 'Forms',
+            onClick: () => {
+              handleClick('/myapps/forms')
+            },
+          },
+          {
+            name: 'Drawing',
+            onClick: () => {
+              handleClick('/myapps/drawing')
             },
           },
         ]}
