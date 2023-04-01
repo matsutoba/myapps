@@ -53,7 +53,7 @@ export const SideMenu: React.FC = () => {
       <AccordionItem>
         <AccordionButton>
           <Box as="span" flex="1" textAlign="left">
-            Portfolio
+            Portofolio
           </Box>
           <AccordionIcon />
         </AccordionButton>
