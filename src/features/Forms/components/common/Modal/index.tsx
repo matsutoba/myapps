@@ -27,7 +27,7 @@ const ModalWrapper = styled.div`
 
 const ModalBody = styled.div`
   padding: 16px;
-  height: calc(400px - 48px - 48px - 32px);
+  height: calc(400px - 48px - 48px);
 `
 
 const Header = styled.div`
@@ -52,6 +52,7 @@ const Footer = styled.div`
 
 const FooterButton = styled.button<{ disabled?: boolean }>`
   margin-left: 8px;
+  padding: 2px 8px;
   height: 32px;
   background-color: #2c3e50;
   border: 1px solid #2c3e50;

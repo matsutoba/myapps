@@ -33,6 +33,8 @@ const FormInput = styled.input`
   box-sizing: border-box;
   font-size: 1rem;
   padding: 8px;
+  border: 1px solid #ddd
+  border-radius: 4px;
 `
 
 const Error = styled.div`

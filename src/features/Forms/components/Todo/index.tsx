@@ -118,7 +118,9 @@ export const Todo: React.FC = () => {
 const CounterWrapper = styled.div`
   position: absolute;
   left: 4px;
-  bottom: 0px;
+  bottom: 2px;
+  height: 22px;
+  width: 22px;
   background: #b0c4de;
   color: #000000;
   padding: 4px 8px;
