@@ -83,13 +83,13 @@ export const Timeline: React.FC<{
         </span>
         <button
           onClick={() => {
-            const start = current as Date
-            start.setHours(new Date().getHours() - 1)
+            const start = new Date(current as Date)
+            start.setHours(new Date().getHours())
             start.setMinutes(Math.floor(start.getMinutes() / 15) * 15)
-            const end = current as Date
-            end.setHours(new Date().getHours() - 1)
+            const end = new Date(current as Date)
             end.setMinutes(start.getMinutes())
-            end.setHours(end.getHours() + 1)
+            end.setHours(start.getHours() + 1)
+            console.log('T', start, end)
             setEvents([
               ...events,
               {

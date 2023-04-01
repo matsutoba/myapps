@@ -5,7 +5,7 @@ export const Forms: React.FC = () => {
   return (
     <>
       <RecoilRoot>
-        <h1>Forms</h1>
+        <h1>ToDo App</h1>
         <Todo />
       </RecoilRoot>
     </>

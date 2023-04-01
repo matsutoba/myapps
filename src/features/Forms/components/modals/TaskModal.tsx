@@ -6,6 +6,7 @@ import { eventsAtom, modalsAtom } from '../../modules/atoms'
 import styled from 'styled-components'
 import { useFormik } from 'formik'
 import dayjs from 'dayjs'
+import { validationSchema } from './validation'
 
 const Wrapper = styled.div`
   display: flex;
@@ -34,6 +35,12 @@ const FormInput = styled.input`
   padding: 8px;
 `
 
+const Error = styled.div`
+  color: #f00;
+  padding-top: 8px;
+  font-size: 0.8rem;
+`
+
 export const TaskModal: React.FC = () => {
   const modalsState = useRecoilValue(modalsSelector)
   const { events } = useRecoilValue(eventsSelector)
@@ -52,39 +59,49 @@ export const TaskModal: React.FC = () => {
       start: null,
       end: null,
     },
+    validationSchema: validationSchema,
     onSubmit: async (values) => {},
   })
 
   const event = useMemo(() => {
     return events.find((e) => e.id === modalsState.currentTaskId)
-  }, [modalsState.currentTaskId])
+  }, [events, modalsState.currentTaskId])
 
   useEffect(() => {
-    if (!event) return
+    if (!event || !modalsState.isTaskModalOpened) return
     formik.setFieldValue('title', event.title)
     formik.setFieldValue('start', event.start)
     formik.setFieldValue('end', event.end)
-  }, [modalsState.currentTaskId])
+  }, [modalsState.isTaskModalOpened])
+
+  if (!modalsState.isTaskModalOpened) return null
 
   return (
     <Modal
       title="予定の追加"
       open={modalsState.isTaskModalOpened}
       onCancel={() => {
+        formik.resetForm()
         setModals({ ...modalsState, isTaskModalOpened: false })
       }}
       onExecute={() => {
         if (!event) return
-        setEvents(
-          events.map((e) => {
-            if (e.id === event.id) {
-              return { ...e, title: formik.values.title || '' }
-            }
-            return e
-          }),
-        )
+        if (!formik.isValid) return
+        console.log('E', formik.values)
+        console.log('Events', events)
+        console.log('Current', event)
+        const newEvents = events.map((e) => {
+          if (e.id === event.id) {
+            return { ...e, title: formik.values.title || '' }
+          }
+          return e
+        })
+        console.log('newEvents', newEvents)
+        setEvents(newEvents)
+        formik.resetForm()
         setModals({ ...modalsState, isTaskModalOpened: false })
       }}
+      isDisableExecute={!formik.isValid}
     >
       <Wrapper>
         <Row>
@@ -105,6 +122,7 @@ export const TaskModal: React.FC = () => {
             autoFocus
             onChange={formik.handleChange}
           />
+          <Error>{formik.errors.title}</Error>
         </Row>
       </Wrapper>
     </Modal>

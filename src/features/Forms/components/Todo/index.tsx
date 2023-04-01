@@ -31,7 +31,6 @@ const CalendarWrapper = styled.div`
     opacity: 0.32;
     cursor: pointer;
   }
-
   & .fc-daygrid-event-harness {
     // DayGridに表示されるイベントを非表示にする
     display: none;
@@ -41,12 +40,6 @@ const CalendarWrapper = styled.div`
     & .fc-bg-event {
       background: transparent;
     }
-    & .fc-daygrid-bg-harness {
-      bottom: 16px;
-      top: unset;
-      right: 16px;
-    }
-
     & .fc-toolbar.fc-header-toolbar {
       margin-bottom: 0.8em;
     }
@@ -56,6 +49,9 @@ const CalendarWrapper = styled.div`
     & table {
       font-size: 0.8em;
     }
+    /*
+
+    */
   }
 `
 
@@ -66,6 +62,10 @@ export const Todo: React.FC = () => {
   const handleClickDate = (e: DateClickArg): void => {
     setCurrentDate(e.date)
   }
+
+  useEffect(() => {
+    setCurrentDate(new Date())
+  }, [])
 
   return (
     <>
@@ -81,13 +81,13 @@ export const Todo: React.FC = () => {
               month: '月',
               list: 'リスト',
             }}
+            selectable
             aspectRatio={1}
             dayCellContent={(day) => {
               return day.dayNumberText.replace('日', '')
             }}
-            selectable
-            dateClick={handleClickDate}
             events={events}
+            dateClick={handleClickDate}
             eventDidMount={(e: EventMountArg) => {
               const count = events.filter((ev) => {
                 return dateEqual(ev.start, e.event.start)
@@ -101,7 +101,9 @@ export const Todo: React.FC = () => {
                 ?.querySelector('.fc-daygrid-day-events')
               if (!element) return
               element.innerHTML = ReactDOMServer.renderToString(
-                <Counter count={count} />,
+                <>
+                  <Counter count={count} />
+                </>,
               )
             }}
           />

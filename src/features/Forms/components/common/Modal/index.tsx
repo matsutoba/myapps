@@ -48,19 +48,21 @@ const Footer = styled.div`
   justify-content: flex-end;
   align-items: center;
   border-top: 1px solid #ccc;
-  & button {
-    margin-left: 8px;
-    height: 32px;
-    background-color: #2c3e50;
-    border: 1px solid #2c3e50;
-    color: #ffffff;
-    border-radius: 4px;
-    box-sizing: border-box;
-    cursor: pointer;
-    &:hover {
-      opacity: 0.8;
-    }
+`
+
+const FooterButton = styled.button<{ disabled?: boolean }>`
+  margin-left: 8px;
+  height: 32px;
+  background-color: #2c3e50;
+  border: 1px solid #2c3e50;
+  color: #ffffff;
+  border-radius: 4px;
+  box-sizing: border-box;
+  &:hover {
+    opacity: 0.8;
   }
+  opacity: ${({ disabled }) => (disabled ? 0.6 : 1)};
+  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
 `
 
 export const Modal: React.FC<{
@@ -68,8 +70,16 @@ export const Modal: React.FC<{
   open?: boolean
   onExecute?: () => void
   onCancel?: () => void
+  isDisableExecute?: boolean
   children?: React.ReactNode
-}> = ({ title, open, onExecute, onCancel, children }) => {
+}> = ({
+  title,
+  open,
+  onExecute,
+  onCancel,
+  isDisableExecute = false,
+  children,
+}) => {
   if (!open) return null
 
   return (
@@ -78,8 +88,15 @@ export const Modal: React.FC<{
         {title && <Header>{title}</Header>}
         <ModalBody>{children}</ModalBody>
         <Footer>
-          <button onClick={() => onCancel && onCancel()}>キャンセル</button>
-          <button onClick={() => onExecute && onExecute()}>OK</button>
+          <FooterButton onClick={() => onCancel && onCancel()}>
+            キャンセル
+          </FooterButton>
+          <FooterButton
+            onClick={() => onExecute && onExecute()}
+            disabled={isDisableExecute}
+          >
+            OK
+          </FooterButton>
         </Footer>
       </ModalWrapper>
     </Wrapper>

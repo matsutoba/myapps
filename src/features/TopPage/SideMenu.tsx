@@ -35,15 +35,9 @@ export const SideMenu: React.FC = () => {
             },
           },
           {
-            name: 'Forms',
+            name: 'ToDo App',
             onClick: () => {
               handleClick('/myapps/forms')
-            },
-          },
-          {
-            name: 'Drawing',
-            onClick: () => {
-              handleClick('/myapps/drawing')
             },
           },
         ]}
