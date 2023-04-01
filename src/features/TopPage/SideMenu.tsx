@@ -1,11 +1,13 @@
 import React from 'react'
-import styled from 'styled-components'
-import { Accordion } from '../../components/common/Accordion'
-
-const Wrapper = styled.div`
-  width: 192px;
-  background-color: #f0f8ff;
-`
+import {
+  Accordion,
+  AccordionButton,
+  AccordionIcon,
+  AccordionItem,
+  AccordionPanel,
+  Box,
+  Heading,
+} from '@chakra-ui/react'
 
 export const SideMenu: React.FC = () => {
   const handleClick = (path: string): void => {
@@ -13,35 +15,75 @@ export const SideMenu: React.FC = () => {
   }
 
   return (
-    <Wrapper>
-      <Accordion
-        title="About"
-        items={[
-          {
-            name: 'Profile',
-            onClick: () => {
-              handleClick('/myapps/profile')
-            },
-          },
-        ]}
-      />
-      <Accordion
-        title="ポートフォリオ"
-        items={[
-          {
-            name: 'CSS',
-            onClick: () => {
-              handleClick('/myapps/csssite')
-            },
-          },
-          {
-            name: 'ToDo App',
-            onClick: () => {
-              handleClick('/myapps/forms')
-            },
-          },
-        ]}
-      />
-    </Wrapper>
+    <Accordion allowToggle={true} pb={1}>
+      <AccordionItem>
+        <Heading>
+          <AccordionButton>
+            <Box as="span" flex="1" textAlign="left">
+              About
+            </Box>
+            <AccordionIcon />
+          </AccordionButton>
+        </Heading>
+        <AccordionPanel pb={1}>
+          <AccordionButton>
+            <Box
+              as="span"
+              flex="1"
+              onClick={() => {
+                handleClick('/myapps/about')
+              }}
+            >
+              About
+            </Box>
+          </AccordionButton>
+          <AccordionButton>
+            <Box
+              as="span"
+              flex="1"
+              onClick={() => {
+                handleClick('/myapps/profile')
+              }}
+            >
+              Profile
+            </Box>
+          </AccordionButton>
+        </AccordionPanel>
+      </AccordionItem>
+      <AccordionItem>
+        <AccordionButton>
+          <Box as="span" flex="1" textAlign="left">
+            Portfolio
+          </Box>
+          <AccordionIcon />
+        </AccordionButton>
+        <AccordionPanel>
+          <AccordionButton>
+            <Box
+              as="span"
+              flex="1"
+              textAlign="left"
+              onClick={() => {
+                handleClick('/myapps/csssite')
+              }}
+            >
+              CSS
+            </Box>
+          </AccordionButton>
+          <AccordionButton>
+            <Box
+              as="span"
+              flex="1"
+              textAlign="left"
+              onClick={() => {
+                handleClick('/myapps/forms')
+              }}
+            >
+              ToDo App
+            </Box>
+          </AccordionButton>
+        </AccordionPanel>
+      </AccordionItem>
+    </Accordion>
   )
 }

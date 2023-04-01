@@ -77,11 +77,12 @@ header
   z-index: 10;
   background-color: #fff;
   box-sizing: border-box;
-  padding: 24px 48px;
+  padding: 48px 48px 24px;
   width: 100%;
   height: 86px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   border-top: 16px solid rgb(241, 239, 234);
 }

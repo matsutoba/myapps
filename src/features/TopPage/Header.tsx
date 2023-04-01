@@ -1,19 +1,22 @@
+import { Box, Flex, Heading, Icon, Link } from '@chakra-ui/react'
 import React from 'react'
-import styled from 'styled-components'
-
-const Wrapper = styled.div`
-  width: 100%;
-  height: 64px;
-  box-sizing: border-box;
-  background-color: #eee;
-  padding: 16px;
-  vertical-align: middle;
-`
+import { FaGithub, FaTwitter, FaLinkedin } from 'react-icons/fa'
 
 export const Header: React.FC = () => {
   return (
-    <Wrapper>
-      <p>matsutoba's</p>
-    </Wrapper>
+    <Flex justify="space-between" align="center">
+      <Box>
+        <Heading size="lg">matsutoba's portofolio</Heading>
+      </Box>
+      <Box w={100}>
+        <Flex justify="space-between">
+          <Link href="https://github.com/matsutoba" target="_blank">
+            <Icon as={FaGithub} w={6} h={6} />
+          </Link>
+          <Icon as={FaTwitter} w={6} h={6} />
+          <Icon as={FaLinkedin} w={6} h={6} />
+        </Flex>
+      </Box>
+    </Flex>
   )
 }

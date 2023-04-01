@@ -1,26 +1,26 @@
-import { useEffect } from 'react'
-
-import styled from 'styled-components'
+import { Box, Heading, Link, Text } from '@chakra-ui/react'
 import { Site } from './Site'
-
-const Wrapper = styled.div`
-  margin: 0 0 32px 0;
-`
 
 export const CssSite: React.FC = () => {
   return (
-    <div>
-      <h1>CSS</h1>
-      <Wrapper>
-        <p>HTML/CSSサンプルページ</p>
-        <p>
-          写真はこちらのサイトを利用しています。{' '}
-          <a href="https://www.pakutaso.com" title="無料の写真素材「ぱくたそ」">
-            無料の写真素材「ぱくたそ」
-          </a>
-        </p>
-      </Wrapper>
-      <Site />
-    </div>
+    <Box w="100%">
+      <Heading>CSS</Heading>
+
+      <Text>HTML/CSSサンプルページ</Text>
+      <Text>
+        写真は
+        <Link
+          href="https://www.pakutaso.com"
+          title="無料の写真素材「ぱくたそ」"
+          target="_blank"
+        >
+          無料の写真素材「ぱくたそ」
+        </Link>
+        を利用しています。
+      </Text>
+      <Box pt={6} w="100%">
+        <Site />
+      </Box>
+    </Box>
   )
 }
