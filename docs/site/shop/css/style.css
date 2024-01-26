@@ -303,12 +303,8 @@ footer
   text-align: center;
 }
 
-/* ----------
-For SP site 
----------- */
-
 @media screen and (429px <= width < 960px) {
-  /* タブレット用レイアウト 600px以上の範囲に収めるデザインはこの中に記述 */
+  /* タブレット用 */
   .header-bar {
     flex-direction: column;
   }
@@ -344,10 +340,20 @@ For SP site
     justify-items: center;
     align-items: center;
   }
+
+  .access {
+    padding: 0 24px;
+  }
+  .access-info {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+  }
 }
 
 @media screen and (width <= 428px) {
-  /* タブレット用レイアウト 600px以上の範囲に収めるデザインはこの中に記述 */
+  /* スマホ用 */
   .header-bar {
     flex-direction: column;
   }
@@ -386,5 +392,15 @@ For SP site
     grid-template-columns: 1fr 1fr;
     justify-items: center;
     align-items: center;
+  }
+
+  .access {
+    padding: 0 24px;
+  }
+  .access-info {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
   }
 }

@@ -1,7 +1,7 @@
-import { Box, Flex, Heading, Icon, Link, Tooltip } from '@chakra-ui/react'
-import React from 'react'
-import { FaGithub, FaTwitter, FaLinkedin } from 'react-icons/fa'
-import { SiHatenabookmark } from 'react-icons/si'
+import { Box, Flex, Heading, Icon, Link, Tooltip } from "@chakra-ui/react";
+import React from "react";
+import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa";
+import { SiHatenabookmark } from "react-icons/si";
 
 export const Header: React.FC = () => {
   return (
@@ -26,5 +26,5 @@ export const Header: React.FC = () => {
         </Flex>
       </Box>
     </Flex>
-  )
-}
+  );
+};

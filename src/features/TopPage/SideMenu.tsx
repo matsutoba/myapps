@@ -15,7 +15,7 @@ export const SideMenu: React.FC = () => {
   };
 
   return (
-    <Accordion allowToggle={true} pb={1}>
+    <Accordion allowMultiple pb={1}>
       <AccordionItem>
         <Heading>
           <AccordionButton>
@@ -30,6 +30,7 @@ export const SideMenu: React.FC = () => {
             <Box
               as="span"
               flex="1"
+              textAlign="left"
               onClick={() => {
                 handleClick("/myapps/about");
               }}
@@ -41,6 +42,7 @@ export const SideMenu: React.FC = () => {
             <Box
               as="span"
               flex="1"
+              textAlign="left"
               onClick={() => {
                 handleClick("/myapps/profile");
               }}
@@ -64,10 +66,10 @@ export const SideMenu: React.FC = () => {
               flex="1"
               textAlign="left"
               onClick={() => {
-                window.open("/site/shop/", "_blank");
+                handleClick("/myapps/csssite");
               }}
             >
-              CSS
+              HTML/CSS/js
             </Box>
           </AccordionButton>
           <AccordionButton>
@@ -79,7 +81,7 @@ export const SideMenu: React.FC = () => {
                 handleClick("/myapps/forms");
               }}
             >
-              ToDo App
+              React(ToDo App)
             </Box>
           </AccordionButton>
         </AccordionPanel>
