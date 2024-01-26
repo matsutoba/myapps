@@ -1,12 +1,12 @@
-import { Box, Heading, Link, Text } from '@chakra-ui/react'
-import { Site } from './Site'
+import { Box, Heading, Link, Text } from "@chakra-ui/react";
+import { Site } from "./Site";
 
 export const CssSite: React.FC = () => {
   return (
     <Box w="100%">
       <Heading>CSS</Heading>
 
-      <Text>HTML/CSSサンプルページ</Text>
+      <Text>HTML/CSSサンプルページ (React/chakra-ui)</Text>
       <Text>
         写真は
         <Link
@@ -22,5 +22,5 @@ export const CssSite: React.FC = () => {
         <Site />
       </Box>
     </Box>
-  )
-}
+  );
+};

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import {
   Accordion,
   AccordionButton,
@@ -7,12 +7,12 @@ import {
   AccordionPanel,
   Box,
   Heading,
-} from '@chakra-ui/react'
+} from "@chakra-ui/react";
 
 export const SideMenu: React.FC = () => {
   const handleClick = (path: string): void => {
-    window.location.href = path
-  }
+    window.location.href = path;
+  };
 
   return (
     <Accordion allowToggle={true} pb={1}>
@@ -31,7 +31,7 @@ export const SideMenu: React.FC = () => {
               as="span"
               flex="1"
               onClick={() => {
-                handleClick('/myapps/about')
+                handleClick("/myapps/about");
               }}
             >
               About
@@ -42,7 +42,7 @@ export const SideMenu: React.FC = () => {
               as="span"
               flex="1"
               onClick={() => {
-                handleClick('/myapps/profile')
+                handleClick("/myapps/profile");
               }}
             >
               Profile
@@ -64,7 +64,7 @@ export const SideMenu: React.FC = () => {
               flex="1"
               textAlign="left"
               onClick={() => {
-                handleClick('/myapps/csssite')
+                window.open("/site/shop/", "_blank");
               }}
             >
               CSS
@@ -76,7 +76,7 @@ export const SideMenu: React.FC = () => {
               flex="1"
               textAlign="left"
               onClick={() => {
-                handleClick('/myapps/forms')
+                handleClick("/myapps/forms");
               }}
             >
               ToDo App
@@ -85,5 +85,5 @@ export const SideMenu: React.FC = () => {
         </AccordionPanel>
       </AccordionItem>
     </Accordion>
-  )
-}
+  );
+};

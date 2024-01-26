@@ -1,12 +1,12 @@
-import React from 'react'
-import { Routes, Route } from 'react-router-dom'
-import { Header } from './Header'
-import { SideMenu } from './SideMenu'
-import { Profile } from '../Profile'
-import { CssSite } from '../CssSite'
-import { Forms } from '../Forms'
-import { Box, Flex } from '@chakra-ui/react'
-import { About } from '../About'
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import { Header } from "./Header";
+import { SideMenu } from "./SideMenu";
+import { Profile } from "../Profile";
+import { CssSite } from "../CssSite";
+import { Forms } from "../Forms";
+import { Box, Flex } from "@chakra-ui/react";
+import { About } from "../About";
 
 export const TopPage: React.FC = () => {
   return (
@@ -16,7 +16,7 @@ export const TopPage: React.FC = () => {
       </Box>
       <Box h="calc(100vh - 64px)">
         <Flex justify="space-between" h="100%">
-          <Box w="150px" backgroundColor="gray.200" p={1}>
+          <Box w="250px" backgroundColor="gray.200" p={1}>
             <SideMenu />
           </Box>
           <Box p={4} flex={1}>
@@ -30,5 +30,5 @@ export const TopPage: React.FC = () => {
         </Flex>
       </Box>
     </Flex>
-  )
-}
+  );
+};
