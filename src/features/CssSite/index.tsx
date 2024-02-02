@@ -33,14 +33,26 @@ export const CssSite: React.FC = () => {
 
       <Box>
         <UnorderedList>
-          <ListItem>
+          <ListItem marginBottom={2}>
             <Box display="flex" alignItems="center">
               <Link
                 href="/myapps/site/shop"
                 title="HTML/CSSサンプルページ (SHOP)"
                 target="_blank"
               >
-                HTML/CSSサンプルページ (SHOP){" "}
+                雑貨店
+              </Link>
+              <Icon as={RxOpenInNewWindow} w={6} h={6} />
+            </Box>
+          </ListItem>
+          <ListItem marginBottom={2}>
+            <Box display="flex" alignItems="center">
+              <Link
+                href="/myapps/site/shop2"
+                title="HTML/CSSサンプルページ (フィットネスサイト)"
+                target="_blank"
+              >
+                スポーツクラブ
               </Link>
               <Icon as={RxOpenInNewWindow} w={6} h={6} />
             </Box>
